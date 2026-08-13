@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WHACK-A-MOLE!</string>
+    <string name="title">🔨 WHACK-A-MOLE!</string>
+    <string name="timer_default">20</string>
+    <string name="seconds">s</string>
+    <string name="separator">  │  </string>
+    <string name="score_default">0</string>
+    <string name="whacks_label"> whacks</string>
+    <string name="whack_button">WHACK!</string>
+    <string name="reset_button">RESET</string>
+    <string name="top_5">🏆 TOP 5</string>
+    <string name="scores_default">1. ---\n2. ---\n3. ---\n4. ---\n5. ---</string>
+    <string name="clear_button">CLEAR</string>
+    <string name="mole_description">Whack the Mole</string>
+</resources>

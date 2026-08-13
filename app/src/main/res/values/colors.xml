@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="gold">#F5A623</color>
+    <color name="blue">#3498DB</color>
+    <color name="btn_reset">#2980B9</color>
+    <color name="btn_clear">#C0392B</color>
+</resources>

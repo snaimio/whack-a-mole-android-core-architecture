@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grass_background"
+    android:padding="24dp"
+    android:paddingTop="40dp"
+    android:paddingBottom="40dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/arcade_font"
+        android:shadowColor="#000000"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="8"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Timer & Score -->
+    <LinearLayout
+        android:id="@+id/topStats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_default"
+            android:textColor="@color/gold"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/arcade_font"
+            android:shadowColor="#000000"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/seconds"
+            android:textColor="@color/gold"
+            android:textSize="34sp"
+            android:fontFamily="@font/arcade_font"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="6"
+            android:layout_marginStart="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/separator"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:fontFamily="@font/arcade_font"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="6"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp" />
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/score_default"
+            android:textColor="@color/gold"
+            android:textSize="56sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/arcade_font"
+            android:shadowColor="#000000"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="8" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/whacks_label"
+            android:textColor="@color/gold"
+            android:textSize="34sp"
+            android:fontFamily="@font/arcade_font"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="6"
+            android:layout_marginStart="6dp" />
+    </LinearLayout>
+
+    <!-- Mole Button -->
+    <ImageButton
+        android:id="@+id/moleButton"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/target"
+        android:contentDescription="@string/mole_description"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/topStats"
+        app:layout_constraintBottom_toTopOf="@id/bottomGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- WHACK! Text -->
+    <TextView
+        android:id="@+id/whackText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/whack_button"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:clickable="false"
+        android:focusable="false"
+        android:fontFamily="@font/arcade_font"
+        android:shadowColor="#000000"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toTopOf="@id/moleButton"
+        app:layout_constraintBottom_toBottomOf="@id/moleButton"
+        app:layout_constraintStart_toStartOf="@id/moleButton"
+        app:layout_constraintEnd_toEndOf="@id/moleButton" />
+
+    <!-- Bottom Section -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <!-- Reset Button -->
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_button"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/arcade_font"
+        android:backgroundTint="@color/btn_reset"
+        android:textColor="@color/white"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:minWidth="140dp"
+        android:minHeight="52dp"
+        android:elevation="6dp"
+        android:stateListAnimator="@null"
+        app:layout_constraintTop_toTopOf="@id/bottomGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Top 5 Title -->
+    <TextView
+        android:id="@+id/topScoresTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/top_5"
+        android:textColor="@color/gold"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/arcade_font"
+        android:shadowColor="#000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="6"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/resetButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Top 5 Scores -->
+    <TextView
+        android:id="@+id/topScoresText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scores_default"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:gravity="center|start"
+        android:fontFamily="@font/arcade_font"
+        android:background="#88000000"
+        android:padding="12dp"
+        android:paddingLeft="28dp"
+        android:paddingRight="28dp"
+        android:minWidth="180dp"
+        android:lineSpacingExtra="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topScoresTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Clear Button -->
+    <Button
+        android:id="@+id/resetScoresButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear_button"
+        android:textSize="24sp"
+        android:fontFamily="@font/arcade_font"
+        android:backgroundTint="@color/btn_clear"
+        android:textColor="@color/white"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:minWidth="140dp"
+        android:minHeight="48dp"
+        android:elevation="6dp"
+        android:stateListAnimator="@null"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topScoresText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
